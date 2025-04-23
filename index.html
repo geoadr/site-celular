@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Página Inicial</title>
+  <style>
+    /* Fonte base e reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(-45deg, #D8BFD8, #dda0dd, #e6e6fa, #dcd0ff);
+      background-size: 400% 400%;
+      animation: fundoAnimado 10s ease infinite;
+      height: 100vh;
+    }
+
+    @keyframes fundoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+
+    .frase {
+      font-size: 2.5em;
+      color: white;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px #C71585;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .texto-digitado {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid white;
+      animation: digitar 4s steps(30) 1s forwards, brilhoBalanço 1.5s infinite alternate;
+    }
+
+    @keyframes digitar {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes brilhoBalanço {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    .icone {
+      font-size: 2.5em;
+      margin-left: 10px;
+      animation: flutuar 2s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .botao {
+      background-color: #FFB6C1;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      box-shadow: 2px 4px 10px rgba(199, 21, 133, 0.4);
+      animation: pulsar 2s infinite;
+    }
+
+    .botao:hover {
+      background-color: #ffa6b8;
+    }
+
+    @keyframes pulsar {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="logo.png" alt="Logo" class="logo">
+    
+    <div class="frase">
+      <div class="texto-digitado">PRECISA DE UM CELULAR NOVO?</div>
+      <div class="icone">📱</div>
+    </div>
+
+    <a href="outra-pagina.html" class="botao">Vamos lá!</a>
+  </div>
+
+</body>
+</html>
