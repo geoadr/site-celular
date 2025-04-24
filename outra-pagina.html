@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segunda Página</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Fonte base e reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(-45deg, #D8BFD8, #dda0dd, #e6e6fa, #dcd0ff);
+      background-size: 400% 400%;
+      animation: fundoAnimado 10s ease infinite;
+      height: 100vh;
+    }
+
+    @keyframes fundoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 150px;
+      height: auto;
+    }
+
+    .menu {
+      margin-top: 100px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 4px #C71585;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #ff69b4;
+      transform: scale(1.1);
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .menu {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .logo {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="logo.png" alt="Logo do site de celulares" class="logo">
+
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="#apple">Apple</a>
+      <a href="#samsung">Samsung</a>
+      <a href="#xiaomi">Xiaomi</a>
+    </div>
+  </div>
+
+</body>
+</html>
