@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segunda Página</title>
+  <meta name="description" content="Loja de celulares com as melhores ofertas de marcas como Apple, Samsung e Xiaomi. Encontre os melhores preços e produtos!">
+  <title>Loja de Celulares - iGeoShop</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Fonte base e reset */
     body {
       margin: 0;
       padding: 0;
@@ -14,6 +14,7 @@
       background: linear-gradient(-45deg, #D8BFD8, #dda0dd, #e6e6fa, #dcd0ff);
       background-size: 400% 400%;
       animation: fundoAnimado 10s ease infinite;
+      display: flex;
       height: 100vh;
     }
 
@@ -23,69 +24,165 @@
       100% { background-position: 0% 50%; }
     }
 
-    .container {
+    .sidebar {
+      width: 250px;
+      background: #D36C9F;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 200px;
+      left: 20px;
+      color: #fff;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar:hover {
+      transform: translateX(10px);
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 12px 20px;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffccff;
+    }
+
+    .main-content {
+      margin-left: 280px;
+      padding: 20px;
+      flex-grow: 1;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100%;
-      position: relative;
-      text-align: center;
-      padding: 20px;
     }
 
     .logo {
       position: absolute;
-      top: 20px;
+      top: 10px;
       left: 20px;
-      width: 150px;
+      width: 200px;
       height: auto;
     }
 
-    .menu {
-      margin-top: 100px;
-      display: flex;
-      gap: 30px;
-      justify-content: center;
+    .container-instrucoes {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      width: 60%;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .menu a {
-      text-decoration: none;
-      color: white;
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .container-instrucoes h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .container-instrucoes p {
       font-size: 1.2em;
-      text-shadow: 1px 1px 4px #C71585;
-      transition: color 0.3s ease, transform 0.3s ease;
+      color: #555;
     }
 
-    .menu a:hover {
-      color: #ff69b4;
+    .cart-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: white;
+      color: #D36C9F;
+      padding: 15px 20px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .cart-button:hover {
+      background-color: #f0f0f0;
       transform: scale(1.1);
     }
 
-    /* Responsividade */
-    @media (max-width: 600px) {
-      .menu {
-        flex-direction: column;
-        gap: 20px;
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #ff5c8d;
+      color: white;
+      border-radius: 50%;
+      padding: 5px 10px;
+      font-size: 1em;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        transform: translateX(0);
       }
-      .logo {
-        width: 120px;
+      .main-content {
+        margin-left: 0;
+        padding: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="logo.png" alt="Logo do site de celulares" class="logo">
+  <img src="logo.png" alt="Logo da loja" class="logo">
 
-    <div class="menu">
-      <a href="index.html">Início</a>
-      <a href="#apple">Apple</a>
-      <a href="#samsung">Samsung</a>
-      <a href="#xiaomi">Xiaomi</a>
+  <div class="sidebar">
+    <h2 style="color: white; text-align: center;">Marcas</h2>
+    <ul>
+      <li><a href="apple.html">Apple</a></li>
+      <li><a href="samsung.html">Samsung</a></li>
+      <li><a href="xiaomi.html">Xiaomi</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="container-instrucoes">
+      <h1>Bem-vindo à IGeoShop!</h1>
+      <p>Estamos felizes por você estar aqui! 🌟 Na IGeoShop, sua experiência de compra será repleta de tecnologia, inovação e os melhores preços de celulares. Navegue pelas marcas e encontre o smartphone perfeito para você.</p>
+      <p>Escolha uma das opções no menu lateral à esquerda e explore nossas ofertas incríveis. Vamos te ajudar a encontrar o celular dos seus sonhos! 📱✨</p>
     </div>
   </div>
+
+  <a href="carrinho.html">
+    <div class="cart-button">
+      🛒
+      <span class="cart-count" id="cart-count">3</span>
+    </div>
+  </a>
 
 </body>
 </html>
