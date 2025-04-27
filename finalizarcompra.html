@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finalização de Compra - iGeoShop">
+  <title>Compra Finalizada - iGeoShop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(-45deg, #D8BFD8, #dda0dd, #e6e6fa, #dcd0ff);
+      background-size: 400% 400%;
+      animation: fundoAnimado 10s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: flex-start;
+      overflow: hidden; /* Para esconder qualquer parte dos balões fora da tela */
+    }
+
+    @keyframes fundoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+
+    .finalizacao-container {
+      text-align: center;
+      color: #333;
+      margin-top: 250px;
+      font-size: 1.2em; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .frase {
+      font-size: 1.8em;
+      color: white;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 6px #C71585;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .texto-digitado {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid white;
+      animation: digitar 4s steps(30) 1s forwards, brilhoBalanço 1.5s infinite alternate;
+    }
+
+    @keyframes digitar {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes brilhoBalanço {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    .icone {
+      font-size: 2em;
+      margin-left: 10px;
+    }
+
+    /* Animar os balões */
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    /* Movimento dos balões para cima */
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-500px) rotate(10deg);
+      }
+      100% {
+        transform: translateY(-1000px) rotate(0);
+      }
+    }
+
+    /* Estilos para os balões com corda */
+    .balloon .balloon-circle {
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    .balloon .balloon-rope {
+      width: 3px;
+      height: 100px;
+      background-color: #000;
+      margin: 0 auto;
+    }
+
+    /* Cores diferentes para cada balão */
+    .balloon:nth-child(1) .balloon-circle { background-color: #ff6f61; }
+    .balloon:nth-child(2) .balloon-circle { background-color: #ffa500; }
+    .balloon:nth-child(3) .balloon-circle { background-color: #00bfff; }
+    .balloon:nth-child(4) .balloon-circle { background-color: #32cd32; }
+    .balloon:nth-child(5) .balloon-circle { background-color: #ff1493; }
+
+  </style>
+</head>
+<body>
+
+  <img src="logo.png" alt="Logo da loja" class="logo">
+
+  <div class="finalizacao-container">
+    <div class="frase">
+      <div class="texto-digitado">COMPRA FINALIZADA COM SUCESSO, VOLTE SEMPRE!</div>
+      <div class="icone">🛍️🎉</div>
+    </div>
+  </div>
+
+  <!-- Balões coloridos subindo -->
+  <div class="balloon" style="left: 20%; animation-duration: 6s;">
+    <div class="balloon-circle"></div>
+    <div class="balloon-rope"></div>
+  </div>
+
+  <div class="balloon" style="left: 40%; animation-duration: 7s;">
+    <div class="balloon-circle"></div>
+    <div class="balloon-rope"></div>
+  </div>
+
+  <div class="balloon" style="left: 60%; animation-duration: 8s;">
+    <div class="balloon-circle"></div>
+    <div class="balloon-rope"></div>
+  </div>
+
+  <div class="balloon" style="left: 80%; animation-duration: 7s;">
+    <div class="balloon-circle"></div>
+    <div class="balloon-rope"></div>
+  </div>
+
+  <div class="balloon" style="left: 25%; animation-duration: 9s;">
+    <div class="balloon-circle"></div>
+    <div class="balloon-rope"></div>
+  </div>
+
+</body>
+</html>
