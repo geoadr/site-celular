@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre os melhores celulares Xiaomi na IGeoShop. Tecnologia, inovação e os melhores preços para você!">
+  <title>Xiaomi - iGeoShop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(-45deg, #D8BFD8, #dda0dd, #e6e6fa, #dcd0ff);
+      background-size: 400% 400%;
+      animation: fundoAnimado 10s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: flex-start;
+    }
+
+    @keyframes fundoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #D36C9F;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 200px;
+      left: 20px;
+      color: #fff;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar:hover {
+      transform: translateX(10px);
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 15px 20px;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffccff;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+
+    .cart-button {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: white;
+      color: #D36C9F;
+      padding: 15px 20px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .cart-button:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.1);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #ff5c8d;
+      color: white;
+      border-radius: 50%;
+      padding: 5px 10px;
+      font-size: 1em;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-top: 100px;
+      padding: 20px;
+      width: 100%;
+      max-width: calc(100% - 300px);
+      margin-left: 400px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product-card .product-title {
+      font-size: 1.4em;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .product-card .product-price {
+      font-size: 1.2em;
+      color: #D36C9F;
+      margin: 10px 0;
+    }
+
+    .product-card .product-description {
+      font-size: 1em;
+      color: #777;
+      margin: 10px 0;
+      height: auto;
+      overflow: auto;
+      max-height: 80px;
+    }
+
+    .product-card .add-to-cart {
+      background-color: #D36C9F;
+      color: white;
+      padding: 12px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: 700;
+      transition: background-color 0.3s;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
+    .product-card .add-to-cart:hover {
+      background-color: #ff5c8d;
+    }
+
+    a:focus, .add-to-cart:focus {
+      outline: 3px solid #ff5c8d;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        transform: translateX(0);
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 10px;
+      }
+      .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .product-container {
+        margin-left: 0;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo.png" alt="Logo da loja" class="logo">
+
+  <div class="sidebar">
+    <h2 style="color: white; text-align: center;">Marcas</h2>
+    <ul>
+      <li><a href="apple.html">Apple</a></li>
+      <li><a href="samsung.html">Samsung</a></li>
+      <li><a href="xiaomi.html">Xiaomi</a></li>
+    </ul>
+  </div>
+
+  <a href="carrinho.html">
+    <div class="cart-button">
+      🛒
+      <span class="cart-count" id="cart-count">0</span>
+    </div>
+  </a>
+
+  <div class="product-container">
+    <div class="product-card">
+      <img src="xiaomi1.jpg" alt="Xiaomi Mi 11">
+      <div class="product-title">Xiaomi Mi 11</div>
+      <div class="product-price">R$ 3.999,00</div>
+      <div class="product-description">
+        Tela AMOLED de 6.81", 128GB de armazenamento, câmera tripla de 108 MP e bateria de 4600mAh.
+      </div>
+      <div class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</div>
+    </div>
+
+    <div class="product-card">
+      <img src="xiaomi2.jpg" alt="Xiaomi Redmi Note 10">
+      <div class="product-title">Xiaomi Redmi Note 10</div>
+      <div class="product-price">R$ 1.799,00</div>
+      <div class="product-description">
+        Tela AMOLED de 6.43", 64GB de armazenamento, câmera quad de 48 MP e bateria de 48mAh.
+      </div>
+      <div class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</div>
+    </div>
+
+    <div class="product-card">
+      <img src="xiaomi3.jpg" alt="Xiaomi Mi 10T Pro">
+      <div class="product-title">Xiaomi Mi 10T Pro</div>
+      <div class="product-price">R$ 3.199,00</div>
+      <div class="product-description">
+        Tela IPS LCD de 6.67", 128GB de armazenamento, câmera de 108 MP e bateria de 5000mAh.
+      </div>
+      <div class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</div>
+    </div>
+
+    <div class="product-card">
+      <img src="xiaomi4.jpg" alt="Xiaomi Mi 11 Ultra">
+      <div class="product-title">Xiaomi Mi 11 Ultra</div>
+      <div class="product-price">R$ 5.999,00</div>
+      <div class="product-description">
+        Tela AMOLED de 6.81", 256GB de armazenamento, câmera tripla de 50 MP e bateria de 5000mAh.
+      </div>
+      <div class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</div>
+    </div>
+  </div>
+
+  <script>
+    let cartCount = 0; // Contagem inicial do carrinho
+
+    function addToCart() {
+      cartCount++; // Aumenta a contagem do carrinho
+      document.getElementById('cart-count').innerText = cartCount; // Atualiza o número do carrinho
+    }
+  </script>
+
+</body>
+</html>
