@@ -130,7 +130,7 @@
       width: 250px;
       text-align: center;
       transition: transform 0.3s ease;
-      max-height: 400px;
+      height: auto;
       overflow: hidden;
     }
 
@@ -160,8 +160,9 @@
       font-size: 1em;
       color: #777;
       margin: 10px 0;
-      height: 60px;
-      overflow: hidden;
+      height: auto;
+      overflow: auto;
+      max-height: 80px;
     }
 
     .product-card .add-to-cart {
@@ -174,6 +175,7 @@
       font-weight: 700;
       transition: background-color 0.3s;
       font-size: 1.1em;
+      margin-top: 10px;
     }
 
     .product-card .add-to-cart:hover {
@@ -222,7 +224,7 @@
   <a href="carrinho.html">
     <div class="cart-button">
       🛒
-      <span class="cart-count" id="cart-count">3</span>
+      <span class="cart-count" id="cart-count">0</span>
     </div>
   </a>
 
@@ -267,6 +269,15 @@
       <div class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</div>
     </div>
   </div>
+
+  <script>
+    let cartCount = 0; // Contagem inicial do carrinho
+
+    function addToCart() {
+      cartCount++; // Aumenta a contagem do carrinho
+      document.getElementById('cart-count').innerText = cartCount; // Atualiza o número do carrinho
+    }
+  </script>
 
 </body>
 </html>
