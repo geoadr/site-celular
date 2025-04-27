@@ -131,7 +131,9 @@
       text-align: center;
       transition: transform 0.3s ease;
       height: auto;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
     }
 
     .product-card:hover {
@@ -244,7 +246,7 @@
       <div class="product-title">Xiaomi Redmi Note 10</div>
       <div class="product-price">R$ 1.799,00</div>
       <div class="product-description">
-        Tela AMOLED de 6.43", 64GB de armazenamento, câmera quad de 48 MP e bateria de 48mAh.
+        Tela AMOLED de 6.43", 64GB de armazenamento, câmera quad de 48 MP e bateria de 5000mAh.
       </div>
       <div class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</div>
     </div>
@@ -271,11 +273,11 @@
   </div>
 
   <script>
-    let cartCount = 0; // Contagem inicial do carrinho
+    let cartCount = 0; 
 
     function addToCart() {
-      cartCount++; // Aumenta a contagem do carrinho
-      document.getElementById('cart-count').innerText = cartCount; // Atualiza o número do carrinho
+      cartCount++; 
+      document.getElementById('cart-count').innerText = cartCount; 
     }
   </script>
 
