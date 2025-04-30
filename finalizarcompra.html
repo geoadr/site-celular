@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Finalização de Compra - iGeoShop">
+  <meta name="description" content="Finalização">
   <title>Compra Finalizada - iGeoShop</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -19,7 +19,7 @@
       align-items: center;
       height: 100vh;
       justify-content: flex-start;
-      overflow: hidden; /* Para esconder qualquer parte dos balões fora da tela */
+      overflow: hidden; 
     }
 
     @keyframes fundoAnimado {
@@ -79,7 +79,6 @@
       margin-left: 10px;
     }
 
-    /* Animar os balões */
     .balloon {
       position: absolute;
       bottom: -100px;
@@ -87,7 +86,6 @@
       opacity: 0.8;
     }
 
-    /* Movimento dos balões para cima */
     @keyframes float {
       0% {
         transform: translateY(0) rotate(0);
@@ -100,7 +98,6 @@
       }
     }
 
-    /* Estilos para os balões com corda */
     .balloon .balloon-circle {
       width: 60px;
       height: 80px;
@@ -116,8 +113,7 @@
       margin: 0 auto;
     }
 
-    /* Cores diferentes para cada balão */
-    .balloon:nth-child(1) .balloon-circle { background-color: #ff6f61; }
+    .balloon:nth-child(1) .balloon-circle { background-color: #aa1204; }
     .balloon:nth-child(2) .balloon-circle { background-color: #ffa500; }
     .balloon:nth-child(3) .balloon-circle { background-color: #00bfff; }
     .balloon:nth-child(4) .balloon-circle { background-color: #32cd32; }
@@ -135,8 +131,7 @@
       <div class="icone">🛍️🎉</div>
     </div>
   </div>
-
-  <!-- Balões coloridos subindo -->
+  
   <div class="balloon" style="left: 20%; animation-duration: 6s;">
     <div class="balloon-circle"></div>
     <div class="balloon-rope"></div>
