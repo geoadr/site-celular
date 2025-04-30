@@ -233,6 +233,7 @@
   <div class="sidebar">
     <h2 style="color: white; text-align: center;">Marcas</h2>
     <ul>
+      <li><a href="pgprincipal.html">Início</a></li>
       <li><a href="apple.html">Apple</a></li>
       <li><a href="samsung.html">Samsung</a></li>
       <li><a href="xiaomi.html">Xiaomi</a></li>
@@ -271,20 +272,17 @@
   </div>
 
   <script>
-    let totalPrice = 8198.00; // Total inicial
+    let totalPrice = 8198.00; 
 
-    // Função para remover item e atualizar o total
+    
     function removeItem(itemId) {
-      var item = document.getElementById(itemId); // Obtém o item
-      var itemPrice = parseFloat(item.querySelector('.item-price').getAttribute('data-price')); // Obtém o preço do item
+      var item = document.getElementById(itemId); 
+      var itemPrice = parseFloat(item.querySelector('.item-price').getAttribute('data-price')); 
 
-      // Subtrai o preço do item removido do total
       totalPrice -= itemPrice;
 
-      // Atualiza o valor total na tela
       document.getElementById('total-price').innerText = `R$ ${totalPrice.toFixed(2)}`;
 
-      // Remove o item da página
       item.remove();
     }
   </script>
